@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font Faces ─────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ─── Herbal Care Brand: Deep Forest Green + Golden Yellow ──────── */
+    --background: 0.98 0.005 95;
+    --foreground: 0.18 0.025 145;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 145;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 145;
+
+    /* Primary: deep forest green */
+    --primary: 0.35 0.12 148;
+    --primary-foreground: 0.98 0.005 95;
+
+    /* Secondary: golden yellow */
+    --secondary: 0.88 0.13 80;
+    --secondary-foreground: 0.18 0.025 145;
+
+    --muted: 0.94 0.02 130;
+    --muted-foreground: 0.5 0.04 148;
+
+    --accent: 0.92 0.06 100;
+    --accent-foreground: 0.18 0.025 145;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.025 148;
+    --input: 0.88 0.025 148;
+    --ring: 0.35 0.12 148;
+
+    --chart-1: 0.35 0.12 148;
+    --chart-2: 0.76 0.13 80;
+    --chart-3: 0.55 0.1 148;
+    --chart-4: 0.65 0.12 100;
+    --chart-5: 0.46 0.09 148;
+
+    --sidebar: 0.95 0.015 130;
+    --sidebar-foreground: 0.18 0.025 145;
+    --sidebar-primary: 0.35 0.12 148;
+    --sidebar-primary-foreground: 0.98 0.005 95;
+    --sidebar-accent: 0.92 0.06 100;
+    --sidebar-accent-foreground: 0.18 0.025 145;
+    --sidebar-border: 0.88 0.025 148;
+    --sidebar-ring: 0.35 0.12 148;
+
+    /* Brand tokens */
+    --brand-green: 0.35 0.12 148;
+    --brand-green-light: 0.55 0.1 148;
+    --brand-green-pale: 0.94 0.04 148;
+    --brand-gold: 0.76 0.15 78;
+    --brand-gold-dark: 0.6 0.14 78;
+    --brand-cream: 0.98 0.015 90;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Fraunces", serif;
+  }
+
+  .bg-hero-pattern {
+    background-image: radial-gradient(
+        ellipse at 20% 50%,
+        oklch(var(--brand-green) / 0.08) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        oklch(var(--brand-gold) / 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 60% 80%,
+        oklch(var(--brand-green-light) / 0.06) 0%,
+        transparent 50%
+      );
+  }
+
+  .bg-leaf-texture {
+    background-image: radial-gradient(
+        circle at 15% 30%,
+        oklch(var(--brand-green) / 0.06) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 70%,
+        oklch(var(--brand-gold) / 0.08) 0%,
+        transparent 40%
+      );
+  }
+
+  .text-brand-green {
+    color: oklch(var(--brand-green));
+  }
+
+  .text-brand-gold {
+    color: oklch(var(--brand-gold));
+  }
+
+  .bg-brand-green {
+    background-color: oklch(var(--brand-green));
+  }
+
+  .bg-brand-gold {
+    background-color: oklch(var(--brand-gold));
+  }
+
+  .bg-brand-cream {
+    background-color: oklch(var(--brand-cream));
+  }
+
+  .border-brand-green {
+    border-color: oklch(var(--brand-green));
+  }
+
+  .border-brand-gold {
+    border-color: oklch(var(--brand-gold));
+  }
+
+  .hover\:bg-brand-green:hover {
+    background-color: oklch(var(--brand-green));
+  }
+
+  .hover\:text-brand-green:hover {
+    color: oklch(var(--brand-green));
+  }
+
+  .hover\:text-brand-gold:hover {
+    color: oklch(var(--brand-gold));
+  }
+}
